@@ -1,6 +1,7 @@
 import DetailsFeedback from "./DetailsFeedback";
 import ExecutiveSummary from "./ExecutiveSummary";
 import HeadResult from "./HeadResult";
+import PerformanceMetric from "./PerformanceMetric";
 import ScoreResult from "./ScoreResult";
 
 export const Result = () => {
@@ -10,6 +11,7 @@ export const Result = () => {
       <ScoreResult />
       <ExecutiveSummary />
       <DetailsFeedback />
+      <PerformanceMetric />
     </div>
   );
 };
