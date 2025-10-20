@@ -10,7 +10,7 @@ const ScoreResult = () => {
           <GiTrophy className="text-yellow-500 " />
           <h3 className="font-semibold">Overall Score</h3>
         </div>
-        <p className=" font-semibold text-6xl text-blue-400">??/??</p>
+        <p className=" font-semibold text-6xl text-blue-400 p-2">??/??</p>
         <div className="flex gap-1 border border-slate-600 p-2 items-center rounded-2xl">
           <GiStarFormation className="text-2xl text-yellow-500" />{" "}
           <span>result text</span>
