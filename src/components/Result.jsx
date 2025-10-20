@@ -1,3 +1,4 @@
+import ATSOptimization from "./ATSOptimization";
 import DetailsFeedback from "./DetailsFeedback";
 import ExecutiveSummary from "./ExecutiveSummary";
 import HeadResult from "./HeadResult";
@@ -14,6 +15,7 @@ export const Result = () => {
       <DetailsFeedback />
       <PerformanceMetric />
       <ResumeInsights />
+      <ATSOptimization />
     </div>
   );
 };
