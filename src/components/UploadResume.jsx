@@ -1,7 +1,7 @@
 import Card from "./Card";
 import { MdOutlineDocumentScanner } from "react-icons/md";
 
-const UploadReseume = () => {
+const UploadResume = () => {
   return (
     <Card>
       <div className="flex flex-col justify-center items-center w-[500px] p-8 border-2 border-dashed border-slate-600 rounded-xl gap-2">
@@ -18,4 +18,4 @@ const UploadReseume = () => {
   );
 };
 
-export default UploadReseume;
+export default UploadResume;
