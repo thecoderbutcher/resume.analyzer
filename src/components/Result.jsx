@@ -3,6 +3,7 @@ import DetailsFeedback from "./DetailsFeedback";
 import ExecutiveSummary from "./ExecutiveSummary";
 import HeadResult from "./HeadResult";
 import PerformanceMetric from "./PerformanceMetric";
+import RecommendedKeywords from "./RecommendedKeywords";
 import ResumeInsights from "./ResumeInsights";
 import ScoreResult from "./ScoreResult";
 
@@ -16,6 +17,7 @@ export const Result = () => {
       <PerformanceMetric />
       <ResumeInsights />
       <ATSOptimization />
+      <RecommendedKeywords />
     </div>
   );
 };
