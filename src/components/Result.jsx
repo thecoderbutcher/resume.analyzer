@@ -1,0 +1,9 @@
+import HeadResult from "./HeadResult";
+
+export const Result = () => {
+  return (
+    <div className="flex flex-col max-w-5xl mx-auto w-full">
+      <HeadResult />
+    </div>
+  );
+};
