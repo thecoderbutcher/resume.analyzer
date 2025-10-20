@@ -7,7 +7,7 @@ const ExecutiveSummary = () => {
         <div className="bg-violet-500/30 p-2 rounded-full">
           <FaClipboard className="text-xl" />
         </div>
-        <p className="text-lg">ExecutiveSummary</p>
+        <p className="text-lg">Executive Summary</p>
       </div>
       <div className="bg-slate-600/30 border border-slate-400/30 rounded-lg p-4">
         text

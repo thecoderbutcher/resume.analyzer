@@ -7,7 +7,7 @@ const PerformanceMetric = () => {
         <div className="bg-cyan-500/30 p-2 rounded-full">
           <FaChartSimple className="text-xl" />
         </div>
-        <p className="text-lg">ExecutiveSummary</p>
+        <p className="text-lg">Performance Metric</p>
       </div>
       <div className="bg-slate-600/30 border border-slate-400/30 rounded-lg p-4">
         text
