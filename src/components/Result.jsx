@@ -1,4 +1,5 @@
 import DetailsFeedback from "./DetailsFeedback";
+import ExecutiveSummary from "./ExecutiveSummary";
 import HeadResult from "./HeadResult";
 import ScoreResult from "./ScoreResult";
 
@@ -7,6 +8,7 @@ export const Result = () => {
     <div className="flex flex-col gap-4 max-w-5xl mx-auto w-full">
       <HeadResult />
       <ScoreResult />
+      <ExecutiveSummary />
       <DetailsFeedback />
     </div>
   );
