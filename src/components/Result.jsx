@@ -7,7 +7,7 @@ import RecommendedKeywords from "./RecommendedKeywords";
 import ResumeInsights from "./ResumeInsights";
 import ScoreResult from "./ScoreResult";
 
-export const Result = () => {
+const Result = () => {
   return (
     <div className="flex flex-col gap-4 max-w-5xl mx-auto w-full">
       <HeadResult />
@@ -21,3 +21,5 @@ export const Result = () => {
     </div>
   );
 };
+
+export default Result;

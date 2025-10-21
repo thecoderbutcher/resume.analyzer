@@ -1,6 +1,7 @@
 import { FaSearch, FaLightbulb } from "react-icons/fa";
 import { TbRadarFilled } from "react-icons/tb";
 import Card from "./Card";
+
 const ResumeInsights = () => {
   return (
     <Card>
