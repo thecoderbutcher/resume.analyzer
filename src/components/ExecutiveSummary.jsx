@@ -1,6 +1,9 @@
 import Card from "./Card";
+import { useCvStore } from "../../store/useCvStore";
 import { FaClipboard } from "react-icons/fa";
+
 const ExecutiveSummary = () => {
+  const { analysis } = useCvStore();
   return (
     <Card>
       <div className="flex gap-1 mb-4 items-center">
@@ -10,7 +13,7 @@ const ExecutiveSummary = () => {
         <p className="text-lg">Executive Summary</p>
       </div>
       <div className="bg-slate-600/30 border border-slate-400/30 rounded-lg p-4">
-        text
+        {analysis.summary}
       </div>
     </Card>
   );
