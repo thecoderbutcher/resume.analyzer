@@ -1,8 +1,13 @@
 import Card from "./Card";
-import { GiTrophy } from "react-icons/gi";
-import { GiStarFormation } from "react-icons/gi";
+import { GiTrophy, GiStarFormation } from "react-icons/gi";
+import { FaStar } from "react-icons/fa";
+import { GrLineChart } from "react-icons/gr";
+import { useCvStore } from "../../store/useCvStore";
 
 const ScoreResult = () => {
+  const { analysis } = useCvStore();
+  const overallScore = parseInt(analysis.overallScore);
+
   return (
     <Card>
       <div className="flex flex-col items-center gap-2">
@@ -10,17 +15,36 @@ const ScoreResult = () => {
           <GiTrophy className="text-yellow-500 " />
           <h3 className="font-semibold">Overall Score</h3>
         </div>
-        <p className=" font-semibold text-6xl text-blue-400 p-2">??/??</p>
-        <div className="flex gap-1 border border-slate-600 p-2 items-center rounded-2xl">
-          <GiStarFormation className="text-2xl text-yellow-500" />{" "}
-          <span>result text</span>
+        <p className=" font-semibold text-6xl text-blue-400 p-2">
+          {analysis.overallScore || "7"}
+        </p>
+
+        {overallScore >= 8 && (
+          <div className="flex gap-1 border border-green-500/20 bg-green-500/10 p-2 items-center rounded-2xl">
+            <GiStarFormation className="text-2xl text-yellow-500" />
+            <span>Execellent</span>
+          </div>
+        )}
+        {overallScore >= 6 && overallScore < 8 && (
+          <div className="flex gap-1 border border-orange-500/20 bg-orange-500/10 p-2 items-center rounded-2xl">
+            <FaStar className="text-2xl text-yellow-500" />
+            <span>Good</span>
+          </div>
+        )}
+        {overallScore < 6 && (
+          <div className="flex gap-1 border border-red-500/20 bg-red-500/10 p-2 items-center rounded-2xl">
+            <GrLineChart className="text-2xl text-red-500" />
+            <span>Needs Improvements</span>
+          </div>
+        )}
+        <div className="h-4 rounded-2xl w-[90%] bg-slate-600/50 mx-auto mt-3">
+          <div
+            className={`inline-flex items-center gap-2 h-4 rounded-full border-1 ${overallScore >= 8 ? "bg-green-500/40 border-green-500/30" : overallScore >= 6 ? "bg-orange-500/40 border-orange-500/30" : "bg-red-500/40 border-red-500/30"}`}
+            style={{
+              width: `${(parseInt(analysis.overallScore) / 10) * 100}%`,
+            }}
+          ></div>
         </div>
-        <div
-          style={{
-            width: "90%",
-          }}
-          className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full border-1 bg-green-500/40 border-green-500/30"
-        ></div>
         <p className="text-slate-500 text-sm font-light">
           Score based on content quality formatting, and keyboard usage
         </p>

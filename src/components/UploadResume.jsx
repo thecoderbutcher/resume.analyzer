@@ -1,13 +1,13 @@
 import Card from "./Card";
 import * as pdfjsLib from "pdfjs-dist";
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min?url";
+import { MdOutlineDocumentScanner } from "react-icons/md";
+import { useCvStore } from "../../store/useCvStore";
 import constants, {
   buildPresenceChecklist,
   METRIC_CONFIG,
 } from "../../constants/Content";
 
-import { MdOutlineDocumentScanner } from "react-icons/md";
-import { useCvStore } from "../../store/useCvStore";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
@@ -19,6 +19,7 @@ const UploadResume = () => {
     setAnalysis,
     setResumeText,
     setPresenceChecklist,
+    reset
   } = useCvStore();
 
   const extractPDFText = async (file) => {
@@ -69,7 +70,7 @@ const UploadResume = () => {
         { role: "user", content: prompt },
       ],
       {
-        model: "gpt-4o",
+        model: "gpt-5-nano",
       },
     );
     const result = parseJSONResponse(
