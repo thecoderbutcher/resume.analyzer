@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useCvStore } from "../store/useCvStore";
 import LoadingResume from "./components/LoadingResume";
 import Result from "./components/Result";
@@ -6,7 +6,7 @@ import Title from "./components/Title";
 import UploadResume from "./components/UploadResume";
 
 function App() {
-  const { aiReady, setAIReady, isLoading, uploadedFile } = useCvStore();
+  const { setAIReady, isLoading, uploadedFile } = useCvStore();
 
   useEffect(() => {
     const interval = setInterval(() => {

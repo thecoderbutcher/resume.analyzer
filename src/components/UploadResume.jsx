@@ -3,11 +3,7 @@ import * as pdfjsLib from "pdfjs-dist";
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min?url";
 import { MdOutlineDocumentScanner } from "react-icons/md";
 import { useCvStore } from "../../store/useCvStore";
-import constants, {
-  buildPresenceChecklist,
-  METRIC_CONFIG,
-} from "../../constants/Content";
-
+import constants, { buildPresenceChecklist } from "../../constants/Content";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
@@ -19,7 +15,7 @@ const UploadResume = () => {
     setAnalysis,
     setResumeText,
     setPresenceChecklist,
-    reset
+    reset,
   } = useCvStore();
 
   const extractPDFText = async (file) => {
