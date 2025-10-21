@@ -1,7 +1,10 @@
 import Card from "./Card";
 import * as pdfjsLib from "pdfjs-dist";
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min?url";
-import constants, { buildPresenceChecklist, METRIC_CONFIG } from "../../constants/Content";
+import constants, {
+  buildPresenceChecklist,
+  METRIC_CONFIG,
+} from "../../constants/Content";
 
 import { MdOutlineDocumentScanner } from "react-icons/md";
 import { useCvStore } from "../../store/useCvStore";
@@ -10,7 +13,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 const UploadResume = () => {
   const {
-    iaReady,
+    aiReady,
     setUploadedFile,
     setIsLoading,
     setAnalysis,
@@ -102,7 +105,7 @@ const UploadResume = () => {
       setIsLoading(false);
     }
   };
-
+  console.log();
   return (
     <Card>
       <div className="flex flex-col justify-center items-center w-[500px] p-8 border-2 border-dashed border-slate-600 rounded-xl gap-2">
@@ -115,14 +118,14 @@ const UploadResume = () => {
           type="file"
           accept="pdf"
           onChange={hadleFileUpload}
-          disabled={!iaReady}
+          disabled={!aiReady}
           className="hidden"
           id="file-upload"
         />
         <label
           htmlFor="file-upload"
           className={`p-2 font-semibold bg-gradient-to-b from-sky-400 via-sky-600 to-sky-800 rounded-lg shadow-lg hover:shadow-cyan-600 transition-all duration-300 ${
-            !iaReady ? "opacity-50 " : "cursor-not-allowed"
+            !aiReady ? "opacity-50 " : "cursor-allowed"
           }
           `}
         >

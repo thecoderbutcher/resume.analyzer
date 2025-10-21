@@ -6,9 +6,7 @@ import Title from "./components/Title";
 import UploadResume from "./components/UploadResume";
 
 function App() {
-  const { aiReady, setAIReady } = useCvStore();
-  const [isLoading, setIsLoading] = useState(false);
-  const [uploadedFile, setUploadedFile] = useState(null);
+  const { aiReady, setAIReady, isLoading, uploadedFile } = useCvStore();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,11 +19,11 @@ function App() {
   }, []);
 
   return (
-    <main className="flex flex-col p-8 items-center justify-center min-h-screen">
+    <main className="flex flex-col p-8 items-center justify-center min-h-screen transition-all duration-300">
       <Title />
       {!uploadedFile && <UploadResume />}
       {isLoading && <LoadingResume />}
-      {uploadedFile && <Result />}
+      {uploadedFile && !isLoading && <Result />}
     </main>
   );
 }

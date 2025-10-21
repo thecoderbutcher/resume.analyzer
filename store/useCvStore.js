@@ -12,13 +12,11 @@ export const useCvStore = create((set) => ({
   setIsLoading: (loading) => set({ isLoading: loading }),
   setUploadedFile: (file) => set({ uploadedFile: file }),
   setAnalysis: (data) => set({ analysis: data }),
-  setResumeTest: (text) => set({ resumeText: text }),
+  setResumeText: (text) => set({ resumeText: text }),
   setPresenceChecklist: (checklist) => set({ presenceChecklist: checklist }),
 
   reset: () =>
-    set({
-      aiReady: false,
-      isLoading: false,
+    set({  
       uploadedFile: null,
       analysis: null,
       resumeText: "",
