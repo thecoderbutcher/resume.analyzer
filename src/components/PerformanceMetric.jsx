@@ -1,7 +1,7 @@
 import Card from "./Card";
 import { useCvStore } from "../../store/useCvStore";
-import { FaChartSimple } from "react-icons/fa6";
 import { METRIC_CONFIG } from "../../constants/Content";
+import { FaChartSimple } from "react-icons/fa6";
 
 const PerformanceMetric = () => {
   const { analysis } = useCvStore();

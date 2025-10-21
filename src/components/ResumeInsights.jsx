@@ -1,8 +1,11 @@
 import { FaSearch, FaLightbulb } from "react-icons/fa";
 import { TbRadarFilled } from "react-icons/tb";
+import { useCvStore } from "../../store/useCvStore";
 import Card from "./Card";
+import { BsDot } from "react-icons/bs";
 
 const ResumeInsights = () => {
+  const { analysis } = useCvStore();
   return (
     <Card>
       <div className="flex gap-1 mb-4 items-center">
@@ -17,14 +20,44 @@ const ResumeInsights = () => {
             <TbRadarFilled className="text-2xl text-red-500" />
             <p className="font-semibold">Action Items</p>
           </div>
-          <div className="flex flex-col">text</div>
+          <div className="flex flex-col">
+            {(
+              analysis.actionItems || [
+                "Optimize keyword placement for better ATS scoring",
+                "Enhance content with quantifiable achievements",
+                "Consider industry-specific terminology",
+              ]
+            ).map((item, index) => (
+              <div key={index} className="flex p-1">
+                <span className="text-2xl">
+                  <BsDot />
+                </span>
+                <span className="text-slate-200">{item}</span>
+              </div>
+            ))}
+          </div>
         </Card>
         <Card styles={"bg-green-500/20 border border-green-500/30"}>
           <div className="flex items-center gap-1">
             <FaLightbulb className="text-xl text-yellow-500" />
             <p className="font-semibold">Pro Tips</p>
           </div>
-          <div className="flex flex-col">text</div>
+          <div className="flex flex-col">
+            {(
+              analysis.proTips || [
+                "Use action verbs to start bullet points",
+                "Keep descriptions concise and impactful",
+                "Taylor keywords to specific job descriptions",
+              ]
+            ).map((tip, index) => (
+              <div key={index} className="flex p-1">
+                <span className="text-2xl">
+                  <BsDot />
+                </span>
+                <span className="text-slate-200">{tip}</span>
+              </div>
+            ))}
+          </div>
         </Card>
       </div>
     </Card>
