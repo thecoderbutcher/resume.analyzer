@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
+import { useCvStore } from "../store/useCvStore";
 import LoadingResume from "./components/LoadingResume";
-
-import { Result } from "./components/Result";
+import Result from "./components/Result";
 import Title from "./components/Title";
 import UploadResume from "./components/UploadResume";
 
 function App() {
-  const [aiReady, setAiReady] = useState(false);
+  const { aiReady, setAIReady } = useCvStore();
   const [isLoading, setIsLoading] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (window.puter?.ai?.chat) {
-        setAiReady(true);
+        setAIReady(true);
         clearInterval(interval);
       }
     }, 300);
