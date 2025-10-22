@@ -1,16 +1,98 @@
-# React + Vite
+# Resume Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Analyze and validate your resume with ATS accuracy
 
-Currently, two official plugins are available:
+Application for evaluating a resume's compatibility with applicant tracking systems (ATS).
+Allows you to upload a file, extract its content, analyze the information using artificial intelligence, and generate a compatibility score based on key recruiting criteria.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Screenshots
 
-## React Compiler
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/ra1.webp?raw=true)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/ra2.webp?raw=true)
 
-## Expanding the ESLint configuration
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/ra3.webp?raw=true)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⭐ Features
+
+- Automated CV analysis with AI.
+- Relevant keyword detection.
+- Assessment of compatibility with ATS systems.
+- Modern, fast, and minimalist interface.
+
+Ideal for candidates looking to optimize their resume before submitting it or recruiters looking to streamline their screening process.
+
+## 🖥️ Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/thecoderbutcher/resume.analyzer.git
+```
+
+Go to the project directory
+
+```bash
+  cd resume.analyzer
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+## 🗂️ Architecture
+
+#### Frontend
+
+```javascript
+root/
+├── constants
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── store/ # Zustand context
+└── index.html
+```
+
+## 🚀 Tech Stack
+
+- React
+- Node
+- Zustand
+- Puter.js
+- TailwindCSS
+
+## 🤝 Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started. (coming soon)
+
+Please adhere to this project's `code of conduct`.
+
+## 📚 Lessons Learned
+
+During the development of this application, we learned how to:
+
+- Implement Zustand for efficient management of global state.
+- Integrate a first approach to AI with Plugin.js.
+- Improve the structure and organization of the frontend project, applying good architectural and maintainability practices.
+
+## 📜 License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## 🧑🏾‍💻 Authors
+
+- [@thecoderbutcher](https://thecoderbutcher.site)
