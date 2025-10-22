@@ -1,8 +1,8 @@
+import { BsDot } from "react-icons/bs";
 import { FaSearch, FaLightbulb } from "react-icons/fa";
 import { TbRadarFilled } from "react-icons/tb";
 import { useCvStore } from "../../store/useCvStore";
 import Card from "./Card";
-import { BsDot } from "react-icons/bs";
 
 const ResumeInsights = () => {
   const { analysis } = useCvStore();
