@@ -4,6 +4,7 @@ import { FaKey } from "react-icons/fa";
 
 const RecommendedKeywords = () => {
   const { analysis } = useCvStore();
+  console.log(analysis);
   return (
     <Card>
       <div className="flex flex-col gap-2 mb-4 items-start">

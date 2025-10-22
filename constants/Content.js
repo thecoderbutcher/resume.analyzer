@@ -52,7 +52,8 @@ If this IS a resume, analyze it thoroughly and provide comprehensive feedback in
     "ats requirement 1",
     "ats requirement 2",
     "ats requirement 3"
-  ]
+  ],
+  "resumeEdited":""
 }
 
 For performanceMetrics, rate each area 1-10 based on:
@@ -78,6 +79,8 @@ For atsChecklist, provide specific requirements and improvements to ensure the r
 For actionItems, provide specific, actionable steps the user can take immediately to improve their resume.
 
 For proTips, give professional advice that would help them in their job search and resume optimization.
+
+Finally, generate the resume content with all the suggested corrections and the necessary styles, then export it to a PDF file and save it as "resumeEdited."
 
 Document text:
 {{DOCUMENT_TEXT}}`,
