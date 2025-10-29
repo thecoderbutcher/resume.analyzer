@@ -3,9 +3,12 @@ import { GrLineChart } from "react-icons/gr";
 import { FaCheck } from "react-icons/fa6";
 import { BsDot } from "react-icons/bs";
 import { useCvStore } from "../../store/useCvStore";
+import { useLangStore } from "../../store/useLangStore";
+import { detailsFeedback } from "../../constants/language";
 
 const DetailsFeedback = () => {
   const { analysis } = useCvStore();
+  const { lang } = useLangStore();
 
   return (
     <div className="flex md:flex-col lg:flex-row gap-4">
@@ -14,8 +17,8 @@ const DetailsFeedback = () => {
           <div className="p-2 rounded-full bg-green-500/30">
             <FaCheck className="text-2xl text-green-500" />
           </div>
-          <p className="text-lg font-semibold text-green-500">Top Strengths</p>
-          <div className="flex flex-col gap-2 w-full items-center px-1 py-2 rounded-lg bg-green-500/20">
+          <p className="text-lg font-semibold text-green-500">{detailsFeedback[lang].topStrengths}</p>
+          <div className="flex flex-col gap-2 w-full items-start px-1 py-2 rounded-lg bg-green-500/20">
             {analysis.strengths.slice(0, 3).map((strength, index) => (
               <div key={index} className="flex">
                 <span className="text-2xl">
@@ -34,9 +37,9 @@ const DetailsFeedback = () => {
             <GrLineChart className="text-2xl text-orange-500" />
           </div>
           <p className="text-lg font-semibold text-orange-500">
-            Main Improvements
+            {detailsFeedback[lang].mainImporvents}
           </p>
-          <div className="flex flex-col gap-2 w-full items-center px-1 py-2 rounded-lg bg-orange-500/20">
+          <div className="flex flex-col gap-2 w-full items-start px-1 py-2 rounded-lg bg-orange-500/20">
             {analysis.strengths.slice(0, 3).map((strength, index) => (
               <div key={index} className="flex">
                 <span className="text-2xl">

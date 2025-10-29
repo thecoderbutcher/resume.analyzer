@@ -1,10 +1,13 @@
 import Card from "./Card";
 import { useCvStore } from "../../store/useCvStore";
 import { FaKey } from "react-icons/fa";
+import { useLangStore } from "../../store/useLangStore";
+import { recommendedKeywords } from "../../constants/language";
 
 const RecommendedKeywords = () => {
   const { analysis } = useCvStore();
-  console.log(analysis);
+  const { lang } = useLangStore();
+
   return (
     <Card>
       <div className="flex flex-col gap-2 mb-4 items-start">
@@ -12,7 +15,7 @@ const RecommendedKeywords = () => {
           <div className="bg-blue-500/30 p-2 rounded-full">
             <FaKey className="text-xl" />
           </div>
-          <h3>Recommended Keywords</h3>
+          <h3>{recommendedKeywords[lang].title}</h3>
         </div>
         <div>
           <div className="flex flex-wrap gap-3 mb-4">
@@ -28,9 +31,7 @@ const RecommendedKeywords = () => {
           <div className="flex items-center gap-1">
             <span className="text-base mt-0.5">💡</span>
             <p className=" text-slate-400 text-sm leading-relaxed">
-              Consider incorporating these keywords naturally into your resume
-              to improve ATS Compatibility and increase your chances of getting
-              notice by recruiters.
+              {recommendedKeywords[lang].text}
             </p>
           </div>
         </div>

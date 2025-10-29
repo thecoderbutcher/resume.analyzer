@@ -4,6 +4,8 @@ import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min?url";
 import { MdOutlineDocumentScanner } from "react-icons/md";
 import { useCvStore } from "../../store/useCvStore";
 import constants, { buildPresenceChecklist } from "../../constants/";
+import { useLangStore } from "../../store/useLangStore";
+import { uploadResume } from "../../constants/language";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
@@ -17,6 +19,8 @@ const UploadResume = () => {
     setPresenceChecklist,
     reset,
   } = useCvStore();
+
+  const { lang } = useLangStore();
 
   const extractPDFText = async (file) => {
     const arrayBuffer = await file.arrayBuffer();
@@ -107,9 +111,9 @@ const UploadResume = () => {
     <Card>
       <div className="flex flex-col justify-center items-center w-[500px] p-8 border-2 border-dashed border-slate-600 rounded-xl gap-2">
         <MdOutlineDocumentScanner className="text-6xl" />
-        <h2 className="text-xl sm:text-2xl ">Upload Your Resume</h2>
+        <h2 className="text-xl sm:text-2xl ">{uploadResume[lang].title}</h2>
         <p className="text-sm text-slate-500 font-light">
-          PDF files only - Get instant analysis
+          {uploadResume[lang].description}
         </p>
         <input
           type="file"
@@ -126,7 +130,7 @@ const UploadResume = () => {
           }
           `}
         >
-          Choose PDF File
+          {uploadResume[lang].button}
         </label>
       </div>
     </Card>
