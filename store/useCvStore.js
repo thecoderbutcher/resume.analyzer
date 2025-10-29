@@ -16,7 +16,7 @@ export const useCvStore = create((set) => ({
   setPresenceChecklist: (checklist) => set({ presenceChecklist: checklist }),
 
   reset: () =>
-    set({  
+    set({
       uploadedFile: null,
       analysis: null,
       resumeText: "",

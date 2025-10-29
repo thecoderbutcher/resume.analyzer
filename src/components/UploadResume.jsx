@@ -3,7 +3,7 @@ import * as pdfjsLib from "pdfjs-dist";
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min?url";
 import { MdOutlineDocumentScanner } from "react-icons/md";
 import { useCvStore } from "../../store/useCvStore";
-import constants, { buildPresenceChecklist } from "../../constants/Content";
+import constants, { buildPresenceChecklist } from "../../constants/";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 

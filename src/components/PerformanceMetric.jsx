@@ -1,6 +1,6 @@
 import Card from "./Card";
 import { useCvStore } from "../../store/useCvStore";
-import { METRIC_CONFIG } from "../../constants/Content";
+import { METRIC_CONFIG } from "../../constants/";
 import { FaChartSimple } from "react-icons/fa6";
 
 const PerformanceMetric = () => {
