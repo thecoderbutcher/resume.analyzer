@@ -6,6 +6,11 @@ export const images = {
   EnglishIcon,
 };
 
+export const navItems = [
+  { url: "/", label: { es: "Analizar Cv", en: "Analyze Resume" } },
+  { url: "/create", label: { es: "Crear Cv", en: "Create Resume" } },
+];
+
 export const title = {
   es: {
     subtitle:
