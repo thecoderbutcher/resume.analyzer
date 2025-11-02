@@ -4,10 +4,18 @@ import { MdSync } from "react-icons/md";
 import { useCvStore } from "../../../../store/useCvStore";
 import { useLangStore } from "../../../../store/useLangStore";
 import { headResult } from "../../../../constants/language";
+import { useEffect } from "react";
 
 const HeadResult = () => {
-  const { reset, uploadedFile } = useCvStore();
-  const { lang } = useLangStore();
+  const { analysis, reset, uploadedFile } = useCvStore();
+  const { lang, setLang } = useLangStore();
+
+  useEffect(() => {
+    console.log(analysis.language);
+    if (analysis.language === "es" || analysis.language === "en")
+      setLang(analysis.language);
+  }, [setLang]);
+
   return (
     <Card>
       <div className="flex justify-between items-center">

@@ -53,6 +53,7 @@ If this IS a resume, analyze it thoroughly and provide comprehensive feedback in
     "ats requirement 2",
     "ats requirement 3"
   ],
+  "language":"",
   "resumeEdited":""
 }
 
@@ -79,6 +80,8 @@ For atsChecklist, provide specific requirements and improvements to ensure the r
 For actionItems, provide specific, actionable steps the user can take immediately to improve their resume.
 
 For proTips, give professional advice that would help them in their job search and resume optimization.
+
+For language, detects the language and save the code of the language, for example en is English, es is Spanish.
 
 Finally, generate the resume content with all the suggested corrections and the necessary styles, then export it to a PDF file and save it as "resumeEdited."
 

@@ -1,9 +1,11 @@
 import SpanishIcon from "../src/assets/images/spanish.png";
 import EnglishIcon from "../src/assets/images/english.png";
+import logo from "../src/assets/images/logo.webp";
 
 export const images = {
   SpanishIcon,
   EnglishIcon,
+  logo,
 };
 
 export const navItems = [

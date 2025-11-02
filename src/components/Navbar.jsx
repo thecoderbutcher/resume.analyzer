@@ -7,7 +7,10 @@ const Navbar = () => {
   const { lang, setLang } = useLangStore();
   return (
     <nav className="flex h-16 w-full justify-between items-center px-6 ">
-      <div>logo</div>
+      <Link to={"/"} className="flex gap-2 items-center">
+        <img src={images.logo} alt="Logo resumia" className="w-8 h-8" />
+        <h2 className="text-lg">RESUMIA</h2>
+      </Link>
       <div className="flex gap-4">
         {ROUTES.map((item, index) => (
           <Link to={item.path} key={index}>
