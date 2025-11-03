@@ -8,7 +8,6 @@ function App() {
       <Layout>
         <AppRoutes />
       </Layout>
-      ;
     </BrowserRouter>
   );
 }
