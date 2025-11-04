@@ -11,7 +11,7 @@ const DetailsFeedback = () => {
   const { lang } = useLangStore();
 
   return (
-    <div className="flex md:flex-col lg:flex-row gap-4">
+    <div className="flex flex-col lg:flex-row gap-4">
       <Card styles={"flex w-full bg-green-500/20 border-green-500/40"}>
         <div className="flex flex-col items-center justify-center w-full gap-2">
           <div className="p-2 rounded-full bg-green-500/30">

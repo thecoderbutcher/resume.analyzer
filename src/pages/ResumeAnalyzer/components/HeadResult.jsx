@@ -18,9 +18,9 @@ const HeadResult = () => {
 
   return (
     <Card>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between items-center">
         <div className="flex gap-4 items-center justify-center">
-          <IoDocumentTextSharp className="text-6xl p-2 bg-gradient-to-b from-blue-500 to-cyan-500 border-blue-500 rounded-lg" />
+          <IoDocumentTextSharp className="text-4xl md:text-6xl p-1 md:p-2 bg-gradient-to-b from-blue-500 to-cyan-500 border-blue-500 rounded-lg" />
           <div className="flex flex-col">
             <h3 className="text-xl font-bold text-green-500">
               {headResult[lang].title}

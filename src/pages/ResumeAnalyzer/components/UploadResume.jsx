@@ -109,10 +109,10 @@ const UploadResume = () => {
   console.log();
   return (
     <Card>
-      <div className="flex flex-col justify-center items-center w-[500px] p-8 border-2 border-dashed border-slate-600 rounded-xl gap-2">
-        <MdOutlineDocumentScanner className="text-6xl" />
+      <div className="flex flex-col justify-center items-center md:w-[500px] p-4 md:p-8 border-2 border-dashed border-slate-600 rounded-xl gap-2">
+        <MdOutlineDocumentScanner className="text-4xl md:text-6xl" />
         <h2 className="text-xl sm:text-2xl ">{uploadResume[lang].title}</h2>
-        <p className="text-sm text-slate-500 font-light">
+        <p className="text-sm text-center md:text-start text-slate-500 font-light">
           {uploadResume[lang].description}
         </p>
         <input

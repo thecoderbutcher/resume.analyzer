@@ -48,7 +48,7 @@ const ScoreResult = () => {
             }}
           ></div>
         </div>
-        <p className="text-slate-500 text-sm font-light">
+        <p className="text-slate-500 text-sm font-light text-center md:text-start">
           {scoreResult[lang].text}
         </p>
       </div>

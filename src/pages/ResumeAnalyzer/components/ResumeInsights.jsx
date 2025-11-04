@@ -1,8 +1,8 @@
+import Card from "../../../components/Card";
 import { BsDot } from "react-icons/bs";
 import { FaSearch, FaLightbulb } from "react-icons/fa";
 import { TbRadarFilled } from "react-icons/tb";
 import { useCvStore } from "../../../../store/useCvStore";
-import Card from "../../../components/Card";
 import { useLangStore } from "../../../../store/useLangStore";
 import { resumeInsights } from "../../../../constants/language";
 

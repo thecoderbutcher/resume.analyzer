@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const { lang, setLang } = useLangStore();
   return (
-    <nav className="flex h-16 w-full justify-between items-center px-6 ">
+    <nav className="flex h-16 w-full justify-around md:justify-between items-center md:px-6 ">
       <Link to={"/"} className="flex gap-2 items-center">
         <img src={images.logo} alt="Logo resumia" className="w-8 h-8" />
-        <h2 className="text-lg">RESUMIA</h2>
+        <h2 className="text-lg hidden md:block">RESUMIA</h2>
       </Link>
-      <div className="flex gap-4">
+      <div className="flex gap-2 md:gap-4">
         {ROUTES.map((item, index) => (
           <Link to={item.path} key={index}>
             {item.label[lang]}
