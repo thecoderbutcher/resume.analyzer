@@ -2,6 +2,7 @@ import SpanishIcon from "../src/assets/images/spanish.png";
 import EnglishIcon from "../src/assets/images/english.png";
 import logo from "../src/assets/images/logo.webp";
 
+// Analyzer
 export const images = {
   SpanishIcon,
   EnglishIcon,
@@ -13,12 +14,14 @@ export const navItems = [
   { url: "/create", label: { es: "Crear Cv", en: "Create Resume" } },
 ];
 
-export const title = {
+export const analizerTitle = {
   es: {
+    title: "Analizador de Cv",
     subtitle:
       "Sube tu currículum en PDF y recibe comentarios instantáneos de IA.",
   },
   en: {
+    title: "Resume Analyzer",
     subtitle: "Upload your PDF resume an get a instant AI feedback",
   },
 };
@@ -159,5 +162,57 @@ export const recommendedKeywords = {
   en: {
     title: "Recommended Keywords",
     text: "Consider incorporating these keywords naturally into your resume to improve ATS Compatibility and increase your chances of getting  notice by recruiters.",
+  },
+};
+
+// Creator
+
+export const creatorTitle = {
+  es: {
+    title: "Creador de Cv",
+    subtitle:
+      "Diseña un currículum inteligente, compatible con ATS y potenciado por IA. Descárgalo en formato PDF listo para enviar.",
+  },
+  en: {
+    title: "Resume Creator",
+    subtitle:
+      "Design a smart, AI-enhanced resume fully compatible with ATS. Download it in a polished PDF format.",
+  },
+};
+
+export const stepper = {
+  es: ["Personal", "Experiencia", "Educación", "Cursos"],
+  en: ["Personal", "Experience", "Education", "Courses"],
+};
+
+export const personalInformation = {
+  es: {
+    title: "Datos Personales",
+    fullnamePlaceholder: "Ingresa tu nombre y apellido completo",
+    position: "Ingresa tu rol",
+    phone: "Ingresa tu número de teléfono",
+    email: "Ingresa tu email",
+    web: "Ingresa tu página web",
+    github: "Ingresa tu cuenta de github",
+    linkedin: "Ingresa tu perfil de linkedin",
+    fullnameError: "Nombre y apellido es obligatorio",
+    phoneError: "Ingresar un telefono valido",
+    emailError: "Ingresar un email valido",
+    githubError: "error github",
+  },
+  en: {
+    title: "Personal Data",
+    fullnamePlaceholder: "Enter your full name",
+    lastnamePlaceholder: "Enter your lastname",
+    position: "Enter your role",
+    phone: "Enter your phone number",
+    email: "Enter your email address",
+    web: "Enter your website",
+    github: "Enter your Github account",
+    linkedin: "Enter your LinkedIn profile",
+    fullnameError: "First and last name is required",
+    phoneError: "Enter a valid phone number",
+    emailError: "Enter a valid email address",
+    githubError: "error github",
   },
 };
