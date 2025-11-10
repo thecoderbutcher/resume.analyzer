@@ -7,7 +7,6 @@ import { personalInformationSchema } from "../../../../schemas/formSchema";
 
 import {
   FaUser,
-  FaUserTie,
   FaIdCardClip,
   FaPhone,
   FaEnvelope,
@@ -43,7 +42,6 @@ const PersonalForm = () => {
           errormessage={personalInformation[lang].fullnameError}
           Icon={FaUser}
         >
-          
           <input
             {...register("fullname")}
             type="text"
