@@ -9,10 +9,10 @@ export const images = {
   logo,
 };
 
-export const navItems = [
-  { url: "/", label: { es: "Analizar Cv", en: "Analyze Resume" } },
-  { url: "/create", label: { es: "Crear Cv", en: "Create Resume" } },
-];
+export const buttons = {
+  es: { prev: "Anterior", next: "Siguiente", add: "Agregar" },
+  en: { prev: "Prev", next: "Next", add: "Add" },
+};
 
 export const analizerTitle = {
   es: {
@@ -214,5 +214,45 @@ export const personalInformation = {
     phoneError: "Enter a valid phone number",
     emailError: "Enter a valid email address",
     githubError: "error github",
+  },
+};
+
+export const experience = {
+  es: {
+    title: "Experiencia",
+    role: "Rol",
+    startDate: "Fecha de inicio",
+    startDate: "Fecha de finalización",
+    company: "Empresa",
+    description: "Descripción de las tareas realizadas",
+    button: "Agregar",
+  },
+  en: {
+    title: "Experience",
+    role: "Role",
+    startDate: "Start date",
+    startDate: "End date",
+    company: "Company",
+    description: "Description of the tasks performed",
+    button: "Add",
+  },
+};
+
+export const education = {
+  es: {
+    title: "Educación",
+    title2: "Cursos",
+    certification: "Título",
+    institution: "Institución",
+    state: "Estado",
+    description: "Descripción",
+  },
+  en: {
+    title: "Education",
+    title2: "Courses",
+    certification: "Title",
+    institution: "Institution",
+    state: "State",
+    description: "Description",
   },
 };
