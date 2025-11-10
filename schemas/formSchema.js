@@ -10,8 +10,18 @@ export const personalInformationSchema = z.object({
   linkedin: z.string().optional(),
 });
 
-export const experienceSchema = z.object({});
+export const experienceSchema = z.object({
+  position: z.string().optional(),
+  startdate: z.date().optional(),
+  enddate: z.date().optional(),
+  role: z.string().optional(),
+  company: z.string().optional(),
+  description: z.string().optional(),
+});
 
-export const educationSchema = z.object({});
-
-export const coursesSchema = z.object({});
+export const educationSchema = z.object({
+  degree: z.string().optional(),
+  institution: z.string().optional(),
+  state: z.string().optional(),
+  description: z.string().optional(),
+});
