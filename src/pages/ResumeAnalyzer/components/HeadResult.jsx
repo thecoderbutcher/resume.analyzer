@@ -11,7 +11,6 @@ const HeadResult = () => {
   const { lang, setLang } = useLangStore();
 
   useEffect(() => {
-    console.log(analysis.language);
     if (analysis.language === "es" || analysis.language === "en")
       setLang(analysis.language);
   }, [setLang]);
