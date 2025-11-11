@@ -106,7 +106,7 @@ const UploadResume = () => {
       setIsLoading(false);
     }
   };
-  console.log();
+
   return (
     <Card>
       <div className="flex flex-col justify-center items-center md:w-[500px] p-4 md:p-8 border-2 border-dashed border-slate-600 rounded-xl gap-2">
