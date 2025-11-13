@@ -87,6 +87,149 @@ Finally, generate the resume content with all the suggested corrections and the 
 
 Document text:
 {{DOCUMENT_TEXT}}`,
+
+  CREATE_RESUME_PROMPT: `Your task is to create a fully ATS-optimized resume strictly based on the JSON data provided.
+
+You will receive:
+- Personal information
+- Work experience
+- Education
+- Languages
+- (Optional) Job offer
+
+You must generate a professional, optimized, quantifiable, and ATS-compliant resume, respecting all rules below.
+Before writing the CV: Detect the user’s language and answer in the same language.
+---------------------
+DATA YOU WILL RECEIVE
+---------------------
+You will receive a single JSON payload containing:
+Personal Information
+- Full name
+- Phone number
+- Email
+- Role (optional)
+- Website (optional)
+- GitHub (optional)
+- LinkedIn (optional)
+Work Experience (List)
+- Each item includes:
+- Company
+- Role
+- Start date
+- End date (optional)
+- Description (optional)
+Education (List)
+Each item includes:
+- Degree
+- Institution
+- Status (completed / incomplete / in progress)
+- Hours
+- Description (optional)
+Languages
+- Language
+- Level
+Extra
+- Job offer (optional)
+JSON payload:
+{{PAYLOAD}}
+---------------------
+YOUR MISSION
+---------------------
+1. Create a Professional Summary
+- Use work experience + education + desired role.
+- Include relevant ATS keywords.
+- Keep it concise, achievement-oriented, and professional.
+- If a job offer is included, tailor the entire wording to match the position.
+2. Optimize Work Experience
+- Rewrite each entry using:
+- Strong, varied action verbs
+- ATS keywords aligned with the industry and/or job offer
+- Quantified achievements (infer realistic metrics when needed, never invent facts unrelated to context)
+- Impact-driven results
+- A clear, chronological structure (most recent first)
+- Examples of allowed reasonable inferences:
+- “improved process efficiency”
+- “reduced errors”
+- “supported X tasks per week”
+- “collaborated with multidisciplinary teams”
+Never invent names, technologies, companies, or personal information.
+3. Optimize Education
+- Rewrite using professional, ATS-friendly wording.
+- Highlight relevant skills or knowledge.
+- Maintain clarity and reverse chronological order.
+4. Optimize Languages
+- Convert to a simple, ATS-recognizable format.
+5. If a job offer is included
+- You must:
+- Adapt the entire CV to match the job posting.
+- Prioritize job-specific keywords.
+- Emphasize achievements and responsibilities aligned with the offer.
+- Generate a Skills section based on both the user's profile and the job description.
+6. Generate the Final CV in Clean, ATS-Safe Text
+- No columns, tables, emojis, icons, or images.
+- Use standard ATS-safe sections:
+- Contact Information
+- Professional Summary
+- Skills
+- Work Experience
+- Education
+- Languages
+- Bullet points should be simple periods (“.”).
+- Maintain consistent formatting, dates, and style.
+---------------------
+FINAL OUTPUT FORMAT (MANDATORY)
+---------------------
+You must output ONLY a JSON object with the following structure:
+{
+  "personalInformation": {},
+  "professionalSummary": "",
+  "experience": [
+    {
+      "company": "",
+      "role": "",
+      "startDay": "",
+      "endDay": "",
+      "taskDescription": ""
+    }
+  ],
+  "education": [
+    {
+      "title": "",
+      "institution": "",
+      "state": "",
+      "hours": "",
+      "description": ""
+    }
+  ],
+  "skills": [],
+  "languages": [
+    {
+      "language": "",
+      "level": ""
+    }
+  ]
+}
+
+Formatting rules
+Personal information values:
+- Capitalize first letter of each word (except website, LinkedIn, GitHub, email → always lowercase).
+Work experience:
+- Ordered from most recent to oldest.
+- “taskDescription” must be a bullet-point list converted to a single string with line breaks (\n).
+Education:
+- Ordered from most recent to oldest.
+Skills:
+- Extracted from the data + inferred from job offer if included.
+Languages:
+- Clean and ATS-friendly.
+---------------------
+IMPORTANT RULES
+---------------------
+- Never fabricate personal information.
+- You may infer reasonable quantitative achievements ONLY when context allows it.
+- When information is missing, optimize wording without adding fictional data.
+- Keep the tone professional, concise, and ATS-compatible at all times.
+- Strictly follow the JSON structure.`,
 };
 
 export const METRIC_CONFIG = [
