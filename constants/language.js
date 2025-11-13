@@ -10,8 +10,13 @@ export const images = {
 };
 
 export const buttons = {
-  es: { prev: "Anterior", next: "Siguiente", add: "Agregar" },
-  en: { prev: "Prev", next: "Next", add: "Add" },
+  es: {
+    prev: "Anterior",
+    next: "Siguiente",
+    add: "Agregar",
+    generate: "Generar",
+  },
+  en: { prev: "Prev", next: "Next", add: "Add", generate: "Generate" },
 };
 
 export const analizerTitle = {
@@ -166,6 +171,16 @@ export const recommendedKeywords = {
 };
 
 // Creator
+export const loadingCreate = {
+  es: {
+    title: "Generando tu currículum",
+    description: "Por favor, espera mientras IA genera tu currículum.",
+  },
+  en: {
+    title: "Generating Your Resume",
+    description: "Please wait while the AI ​​generates your resume.",
+  },
+};
 
 export const creatorTitle = {
   es: {
@@ -181,20 +196,20 @@ export const creatorTitle = {
 };
 
 export const stepper = {
-  es: ["Personal", "Experiencia", "Educación", "Cursos"],
-  en: ["Personal", "Experience", "Education", "Courses"],
+  es: ["Personal", "Experiencia", "Educación", "Extra"],
+  en: ["Personal", "Experience", "Education", "Extra"],
 };
 
 export const personalInformation = {
   es: {
     title: "Datos Personales",
     fullnamePlaceholder: "Ingresa tu nombre y apellido completo",
-    position: "Ingresa tu rol",
+    role: "Ingresa tu rol (opcional)",
     phone: "Ingresa tu número de teléfono",
     email: "Ingresa tu email",
-    web: "Ingresa tu página web",
-    github: "Ingresa tu cuenta de github",
-    linkedin: "Ingresa tu perfil de linkedin",
+    web: "Ingresa tu página web (opcional)",
+    github: "Ingresa tu cuenta de github (opcional)",
+    linkedin: "Ingresa tu perfil de linkedin (opcional)",
     fullnameError: "Nombre y apellido es obligatorio",
     phoneError: "Ingresar un telefono valido",
     emailError: "Ingresar un email valido",
@@ -204,12 +219,12 @@ export const personalInformation = {
     title: "Personal Data",
     fullnamePlaceholder: "Enter your full name",
     lastnamePlaceholder: "Enter your lastname",
-    position: "Enter your role",
+    role: "Enter your role (optional)",
     phone: "Enter your phone number",
     email: "Enter your email address",
-    web: "Enter your website",
-    github: "Enter your Github account",
-    linkedin: "Enter your LinkedIn profile",
+    web: "Enter your website (optional)",
+    github: "Enter your Github account (optional)",
+    linkedin: "Enter your LinkedIn profile (optional)",
     fullnameError: "First and last name is required",
     phoneError: "Enter a valid phone number",
     emailError: "Enter a valid email address",
@@ -220,21 +235,31 @@ export const personalInformation = {
 export const experience = {
   es: {
     title: "Experiencia",
-    role: "Rol",
+    position: "Rol",
     startDate: "Fecha de inicio",
-    startDate: "Fecha de finalización",
+    endDate: "Fecha de finalización",
     company: "Empresa",
-    description: "Descripción de las tareas realizadas",
+    description: "Descripción de las tareas realizadas (opcional)",
     button: "Agregar",
+    errorRole: "Rol es obligatorio",
+    errorCompany: "Debe ingresar el nombre de la empresa",
+    errorStartDate: "Fecha de inicio es obligatorio",
+    errorDate: "La fecha de inicio no puede ser mayor a la fecha de fin",
+    toast: "Experiencia añadida con éxito",
   },
   en: {
     title: "Experience",
-    role: "Role",
+    position: "Role",
     startDate: "Start date",
-    startDate: "End date",
+    endDate: "End date",
     company: "Company",
-    description: "Description of the tasks performed",
+    description: "Description of the tasks performed (optional)",
     button: "Add",
+    errorRole: "Role is required",
+    errorCompany: "You must enter the company name",
+    errorStartDate: "Start date is required",
+    errorDate: "The start date cannot be later than the end date",
+    toast: "Experience added successfully",
   },
 };
 
@@ -245,7 +270,13 @@ export const education = {
     certification: "Título",
     institution: "Institución",
     state: "Estado",
-    description: "Descripción",
+    duration: "Cantidad de horas (optional)",
+    description: "Descripción (optional)",
+    errorCertification: "El titulo es obligatorio",
+    errorInstitution: "Debe ingresar el nombre de la institución",
+    errorState: "Ingrese el estado: Completo, En curso o Incompleto",
+    errorHours: "Debe ingresar el número de horas válidas",
+    toast: "Educación añadida con éxito.",
   },
   en: {
     title: "Education",
@@ -253,6 +284,58 @@ export const education = {
     certification: "Title",
     institution: "Institution",
     state: "State",
-    description: "Description",
+    duration: "Number of hours (optional)",
+    description: "Description (optional)",
+    errorCertification: "The degree is required",
+    errorInstitution: "You must enter the name of the institution",
+    errorState: "Enter the status: Complete, In Progress, or Incomplete",
+    errorHours: "You must enter the valid number of hours",
+    toast: "Successfully added education.",
+  },
+};
+export const extra = {
+  es: {
+    title: "Idioma",
+    language: "Idioma",
+    level: "Nivel",
+    title2: "Propuesta Laboral",
+    description:
+      "Añade propuesta de trabajo a la que deseas aplicar (opcional)",
+    errorLanguage: "Debes introducir un idioma.",
+    errorLevel: "El nivel es obligatorio",
+    toast: "Idioma añadido exitosamente.",
+  },
+  en: {
+    title: "Language",
+    language: "Language",
+    level: "Level",
+    title2: "Job Proposal",
+    description: "Add job proposal to which you wish to apply (optional)",
+    errorLanguage: "You must enter a language.",
+    errorLevel: "The level is mandatory",
+    toast: "Successfully added language.",
+  },
+};
+
+export const pdfGenerate = {
+  es: {
+    title: "¡Excelente trabajo! Tu CV ahora cumple con los estándares ATS.",
+    subtitle: "Descárgalo y da el siguiente paso en tu carrera.",
+    download: "Descargar",
+    summary: "Resumen profesional",
+    experience: "Experiencia laboral",
+    education: "Educación",
+    skills: "Habilidades",
+    languages: "Idiomas",
+  },
+  en: {
+    title: "Great job! Your resume now meets ATS standards.",
+    subtitle: "Download it and take the next step in your career.",
+    download: "Download",
+    summary: "Professional Summary",
+    experience: "Work Experience",
+    education: "Education",
+    skills: "Skills",
+    languages: "Languages",
   },
 };
