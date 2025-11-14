@@ -3,6 +3,7 @@ import { create } from "zustand";
 export const useCvStore = create((set) => ({
   aiReady: false,
   isLoading: false,
+  isGenerate: false,
   uploadedFile: null,
   analysis: null,
   resumeText: "",
@@ -10,6 +11,7 @@ export const useCvStore = create((set) => ({
 
   setAIReady: (ready) => set({ aiReady: ready }),
   setIsLoading: (loading) => set({ isLoading: loading }),
+  setIsGenerate: (generate) => set({ isGenerate: generate }),
   setUploadedFile: (file) => set({ uploadedFile: file }),
   setAnalysis: (data) => set({ analysis: data }),
   setResumeText: (text) => set({ resumeText: text }),
