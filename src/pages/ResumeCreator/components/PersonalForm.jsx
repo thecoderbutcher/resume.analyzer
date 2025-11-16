@@ -4,7 +4,8 @@ import { useFormStore } from "../../../../store/useFormStore";
 import { useLangStore } from "../../../../store/useLangStore";
 import { personalInformation } from "../../../../constants/language";
 import { personalInformationSchema } from "../../../../schemas/formSchema";
-
+import { buttons } from "../../../../constants/language";
+import InputForm from "./InputForm";
 import {
   FaUser,
   FaIdCardClip,
@@ -14,7 +15,6 @@ import {
   FaLinkedin,
   FaEarthAmericas,
 } from "react-icons/fa6";
-import InputForm from "./InputForm";
 
 const PersonalForm = () => {
   const { lang } = useLangStore();
@@ -79,10 +79,10 @@ const PersonalForm = () => {
 
         <InputForm Icon={FaIdCardClip}>
           <input
-            {...register("position")}
+            {...register("role")}
             type="text"
             className="w-full outline-none"
-            placeholder={personalInformation[lang].position}
+            placeholder={personalInformation[lang].role}
           />
         </InputForm>
 
@@ -119,7 +119,7 @@ const PersonalForm = () => {
           className="px-2 py-1 bg-blue-500/50 rounded-md hover:bg-blue-500 transition-all duration-200"
           type="submit"
         >
-          Siguiente
+          {buttons[lang].next}
         </button>
       </div>
     </form>
