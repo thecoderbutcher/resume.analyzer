@@ -5,7 +5,7 @@ const InputForm = ({ error, errormessage, children, Icon }) => {
         className={`flex items-center w-full bg-gray-700 px-2 py-1 rounded-md ${error ? "border border-red-600/50" : ""}`}
       >
         {children}
-        <Icon className="text-gray-400" />
+        <Icon className={`${error ? "text-red-600/70" : "text-gray-400"}`} />
       </div>
       {error && <p className="text-red-500 text-xs">{errormessage}</p>}
     </div>
