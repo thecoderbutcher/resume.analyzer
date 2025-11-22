@@ -187,11 +187,13 @@ export const creatorTitle = {
     title: "Creador de Cv",
     subtitle:
       "Diseña un currículum inteligente, compatible con ATS y potenciado por IA. Descárgalo en formato PDF listo para enviar.",
+    tip: "Cuantos más detalles proporciones, mejores serán los resultados.",
   },
   en: {
     title: "Resume Creator",
     subtitle:
       "Design a smart, AI-enhanced resume fully compatible with ATS. Download it in a polished PDF format.",
+    tip: "The more details you provide, the better the results will be.",
   },
 };
 

@@ -13,7 +13,7 @@ import { useCvStore } from "../../../store/useCvStore";
 import Loading from "../../components/Loading";
 import { loadingCreate } from "../../../constants/language";
 import GeneratePdf from "./components/GeneratePdf";
-import ControlButtons from "./components/ControlButtons";
+import { FaLightbulb } from "react-icons/fa6";
 
 const ResumeCreator = () => {
   const { lang } = useLangStore();
@@ -42,15 +42,21 @@ const ResumeCreator = () => {
         />
       )}
       {!isLoading && !isGenerate && (
-        <Card>
-          <Stepper currentStep={step} />
-          <div className="flex flex-col p-2 md:p-6">
-            {step === 1 && <PersonalForm />}
-            {step === 2 && <ExperienceForm />}
-            {step === 3 && <EducationForm />}
-            {step === 4 && <ExtraForm />}
+        <div className="flex flex-col gap-4">
+          <Card>
+            <Stepper currentStep={step} />
+            <div className="flex flex-1 flex-col p-2 md:p-6">
+              {step === 1 && <PersonalForm />}
+              {step === 2 && <ExperienceForm />}
+              {step === 3 && <EducationForm />}
+              {step === 4 && <ExtraForm />}
+            </div>
+          </Card>
+          <div className="flex gap-1 justify-center items-center text-sm font-extralight">
+            <FaLightbulb className="text-amber-300" />
+            <p>{creatorTitle[lang].tip}</p>
           </div>
-        </Card>
+        </div>
       )}
       {!isLoading && isGenerate && (
         <Card>
