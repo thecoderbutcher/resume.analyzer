@@ -9,7 +9,7 @@ import { detailsFeedback } from "../../../../constants/language";
 const DetailsFeedback = () => {
   const { analysis } = useCvStore();
   const { lang } = useLangStore();
-console.log(analysis)
+  
   return (
     <div className="flex flex-col lg:flex-row gap-4">
       <Card styles={"flex w-full bg-green-500/20 border-green-500/40"}>

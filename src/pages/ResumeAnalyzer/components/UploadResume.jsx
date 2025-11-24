@@ -6,6 +6,7 @@ import { useCvStore } from "../../../../store/useCvStore";
 import constants, { buildPresenceChecklist } from "../../../../constants";
 import { useLangStore } from "../../../../store/useLangStore";
 import { uploadResume } from "../../../../constants/language";
+import Dropzone from "react-dropzone";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
@@ -82,9 +83,7 @@ const UploadResume = () => {
     return result;
   };
 
-  const hadleFileUpload = async (e) => {
-    const file = e.target.files[0];
-
+  const handleFileUpload = async (file) => {
     if (!file || file.type !== "application/pdf")
       return alert("Please upload a PDF file only");
 
@@ -109,30 +108,40 @@ const UploadResume = () => {
 
   return (
     <Card>
-      <div className="flex flex-col justify-center items-center md:w-[500px] p-4 md:p-8 border-2 border-dashed border-slate-600 rounded-xl gap-2">
-        <MdOutlineDocumentScanner className="text-4xl md:text-6xl" />
-        <h2 className="text-xl sm:text-2xl ">{uploadResume[lang].title}</h2>
-        <p className="text-sm text-center md:text-start text-slate-500 font-light">
-          {uploadResume[lang].description}
-        </p>
-        <input
-          type="file"
-          accept="pdf"
-          onChange={hadleFileUpload}
-          disabled={!aiReady}
-          className="hidden"
-          id="file-upload"
-        />
-        <label
-          htmlFor="file-upload"
-          className={`p-2 font-semibold bg-gradient-to-b from-sky-400 via-sky-600 to-sky-800 rounded-lg shadow-lg hover:shadow-cyan-600 transition-all duration-300 ${
-            !aiReady ? "opacity-50 " : "cursor-allowed"
-          }
-          `}
-        >
-          {uploadResume[lang].button}
-        </label>
-      </div>
+      <Dropzone
+        accept={{ "application/pdf": [] }}
+        multiple={false}
+        onDrop={(acceptedFiles) => {
+          const file = acceptedFiles[0];
+          handleFileUpload(file);
+        }}
+      >
+        {({ getRootProps, getInputProps }) => (
+          <div
+            {...getRootProps()}
+            className="flex flex-col justify-center items-center md:w-[550px] p-4 md:p-8 border-2 border-dashed border-slate-600 rounded-xl gap-2 cursor-pointer"
+          >
+            <MdOutlineDocumentScanner className="text-4xl md:text-6xl" />
+            <h2 className="text-xl sm:text-2xl">{uploadResume[lang].title}</h2>
+            <p className="text-sm text-center md:text-start text-slate-500 font-light">
+              {uploadResume[lang].description}
+            </p>
+
+            {/* Dropzone input */}
+            <input {...getInputProps()} disabled={!aiReady} />
+
+            {/* Button (optional visual aid) */}
+            <div
+              className={`p-2 font-semibold bg-gradient-to-b from-sky-400 via-sky-600 to-sky-800 rounded-lg shadow-lg hover:shadow-cyan-600 transition-all duration-300 ${
+                !aiReady ? "opacity-50" : ""
+              }`}
+            >
+              {uploadResume[lang].button}
+            </div>
+            <p className="text-slate-400 pt-2">{uploadResume[lang].drag}</p>
+          </div>
+        )}
+      </Dropzone>
     </Card>
   );
 };

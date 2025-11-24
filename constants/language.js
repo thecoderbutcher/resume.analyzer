@@ -36,11 +36,13 @@ export const uploadResume = {
     title: "Sube tu currículum",
     description: "Solo archivos PDF: obtenga un análisis instantáneo",
     button: "Selecciona archivo PDF",
+    drag: "O arrastra y suelta tu currículum",
   },
   en: {
     title: "Upload Your Resume",
     description: "PDF files only - Get instant analysis",
     button: "Choose PDF File",
+    drag: "Or drag and drop your resume",
   },
 };
 
