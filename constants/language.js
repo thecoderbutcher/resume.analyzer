@@ -9,6 +9,13 @@ export const images = {
   logo,
 };
 
+export const footer = {
+  es: {
+    develop: "Desarrollado con",
+    by: "por",
+  },
+  en: { develop: "Developed with", by: "by" },
+};
 export const buttons = {
   es: {
     prev: "Anterior",
