@@ -8,13 +8,14 @@ Now it not only analyzes your resume, but also allows you to **generate a fully 
 
 ## 📸 Screenshots
 
-![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia01?raw=true)
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia01.webp?raw=true)
 
-![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia02?raw=true)
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia02.webp?raw=true)
 
-![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia03?raw=true)
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia03.webp?raw=true)
 
-![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia04?raw=true)
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia04.webp?raw=true)
+
 ## ⭐ Features
 
 - **AI-powered automated CV analysis.**
