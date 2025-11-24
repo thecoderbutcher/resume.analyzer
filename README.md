@@ -1,26 +1,33 @@
-# Resume Analyzer
+# Resumia
 
-Analyze and validate your resume with ATS accuracy
+Boost, analyze and optimize your CV with artificial intelligence (ATS-Friend)
 
-Application for evaluating a resume's compatibility with applicant tracking systems (ATS).
-Allows you to upload a file, extract its content, analyze the information using artificial intelligence, and generate a compatibility score based on key recruiting criteria.
+Resumia it's an application designed to evaluate, improve, and create resumes that are highly compatible with Applicant Tracking Systems (ATS).
+
+Now it not only analyzes your resume, but also allows you to **generate a fully AI-optimized one**, ready to pass automated filters and stand out to recruiters.
 
 ## 📸 Screenshots
 
-![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/ra1.webp?raw=true)
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia01?raw=true)
 
-![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/ra2.webp?raw=true)
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia02?raw=true)
 
-![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/ra3.webp?raw=true)
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia03?raw=true)
 
+![App Screenshot](https://github.com/thecoderbutcher/resume.analyzer/blob/main/screenshots/resumia04?raw=true)
 ## ⭐ Features
 
-- Automated CV analysis with AI.
-- Relevant keyword detection.
-- Assessment of compatibility with ATS systems.
-- Modern, fast, and minimalist interface.
+- **AI-powered automated CV analysis.**
+- **Relevant keyword detection** based on your profile and the position you're applying for.
+- **ATS compatibility assessment** with detailed scoring.
+- **AI-powered CV builder**, fully ATS-friendly.
+- **Content optimization**, including experience, skills, and achievements.
+- **Modern, fast, and minimalist** interface.
+- Ideal for both **candidates** who want to stand out and **recruiters** looking to streamline the pre-selection process.
 
-Ideal for candidates looking to optimize their resume before submitting it or recruiters looking to streamline their screening process.
+Resumia is the perfect tool to take your CV to the next level.
+
+Upload, analyze, improve, or create your resume from scratch in just a few clicks.
 
 ## 🖥️ Run Locally
 
@@ -53,25 +60,42 @@ Start the server
 #### Frontend
 
 ```javascript
-root/
+root
 ├── constants
-├── src/
-│   ├── assets/
-│   ├── components/
+│   ├── index.js      // Prompts and metric config
+│   ├── language.js   // Application text
+│   └── routes.jsx    // Aplication routes
+├── schemas
+│   ├── formSchema.js // Zod form validations
+├── src
+│   ├── assets
+│   ├── components
+│   ├── pages
+│   │   ├── ResumeAnalyzer
+│   │   │   ├── components
+│   │   │   └── index.js
+│   │   └── ResumeCreator
+│   │   │   ├── components
+│   │   │   └── index.js
 │   ├── App.jsx
 │   ├── index.css
+│   ├── layout.jsx
 │   └── main.jsx
-├── store/ # Zustand context
+├── store
+│   ├── useCvStore.js   // Analyzer context
+│   ├── useFormStore.js // Creator Context
+│   └── useLangStore.js // Language Context
 └── index.html
 ```
 
 ## 🚀 Tech Stack
 
-- React
 - Node
-- Zustand
+- React
 - Puter.js
 - TailwindCSS
+- Zustand
+- Zod
 
 ## 🤝 Contributing
 
