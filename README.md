@@ -74,10 +74,10 @@ root
 │   ├── pages
 │   │   ├── ResumeAnalyzer
 │   │   │   ├── components
-│   │   │   └── index.js
+│   │   │   └── index.jsx
 │   │   └── ResumeCreator
 │   │   │   ├── components
-│   │   │   └── index.js
+│   │   │   └── index.jsx
 │   ├── App.jsx
 │   ├── index.css
 │   ├── layout.jsx
