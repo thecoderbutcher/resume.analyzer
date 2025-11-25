@@ -35,13 +35,13 @@ Upload, analyze, improve, or create your resume from scratch in just a few click
 Clone the project
 
 ```bash
-  git clone https://github.com/thecoderbutcher/resume.analyzer.git
+  git clone https://github.com/thecoderbutcher/resumia.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd resume.analyzer
+  cd resumia
 ```
 
 Install dependencies
