@@ -4,13 +4,19 @@ import { useLangStore } from "../../../../store/useLangStore";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import { useFormStore } from "../../../../store/useFormStore";
+import { useEffect } from "react";
 
 const GeneratePdf = () => {
-  const { lang } = useLangStore();
+  const { lang, setLang } = useLangStore();
   const { data, result } = useFormStore();
   const dataCvIa = JSON.parse(result);
-  const capitalize = (text) => text.replace(/\b\w/g, (l) => l.toUpperCase());
 
+  useEffect(() => {
+    if (dataCvIa.langDetected === "es" || dataCvIa.langDetected === "en")
+      setLang(dataCvIa.langDetected);
+  }, [setLang]);
+
+  const capitalize = (text) => text.replace(/\b\w/g, (l) => l.toUpperCase());
   const experienceContent = dataCvIa.experience.map((exp) => {
     return [
       {
@@ -43,19 +49,19 @@ const GeneratePdf = () => {
     return [
       {
         text: `${language.language} · ${language.level}`,
-        style: "textPrimary",
+        style: "textNormal",
       },
     ];
   });
 
   const skillsContent = dataCvIa.skills.map((skill) => {
-    return [{ text: `- ${skill}`, style: "textPrimary" }];
+    return [{ text: `- ${skill}`, style: "textNormal" }];
   });
 
   const generatePdf = () => {
     const docDefinition = {
       pageSize: "A4",
-      pageMargins: [20, 20, 20, 20],
+      pageMargins: [40, 20, 40, 40],
       content: [
         { text: capitalize(data.fullname), style: "header" },
         { text: capitalize(data.role), style: "subheader" },
@@ -70,7 +76,7 @@ const GeneratePdf = () => {
               type: "line",
               x1: 0,
               y1: 0,
-              x2: 550,
+              x2: 500,
               y2: 0,
               lineWidth: 0.5,
               lineColor: "#333",
@@ -86,7 +92,7 @@ const GeneratePdf = () => {
               type: "line",
               x1: 0,
               y1: 0,
-              x2: 550,
+              x2: 500,
               y2: 0,
               lineWidth: 0.5,
               lineColor: "#333",
@@ -102,7 +108,7 @@ const GeneratePdf = () => {
               type: "line",
               x1: 0,
               y1: 0,
-              x2: 550,
+              x2: 500,
               y2: 0,
               lineWidth: 0.5,
               lineColor: "#333",
@@ -118,7 +124,7 @@ const GeneratePdf = () => {
               type: "line",
               x1: 0,
               y1: 0,
-              x2: 550,
+              x2: 500,
               y2: 0,
               lineWidth: 0.5,
               lineColor: "#333",
@@ -134,7 +140,7 @@ const GeneratePdf = () => {
               type: "line",
               x1: 0,
               y1: 0,
-              x2: 550,
+              x2: 500,
               y2: 0,
               lineWidth: 0.5,
               lineColor: "#333",
@@ -150,17 +156,22 @@ const GeneratePdf = () => {
         subheader: { fontSize: 14, margin: [0, 0, 0, 1], color: "#2b2b2b" },
         contact: { fontSize: 10, color: "#444" },
         section: { fontSize: 14, bold: true, margin: [0, 1], color: "#2b2b2b" },
-        textPrimary: { fontSize: 12, color: "#2b2b2b", margin: [0, 2] },
+        textPrimary: {
+          fontSize: 12,
+          color: "#2b2b2b",
+          margin: [0, 2],
+          bold: true,
+        },
         textSecondary: {
           fontSize: 10,
           color: "#2b2b2b",
-          margin: [0, 2],
+          margin: [0, 1],
           italics: true,
         },
         textNormal: {
           fontSize: 11,
           color: "#2b2b2b",
-          margin: [0, 2],
+          margin: [0, 1],
           alignment: "justify",
         },
       },
@@ -169,7 +180,7 @@ const GeneratePdf = () => {
       .createPdf(docDefinition)
       .download(`${data.fullname}_${data.role}.pdf`);
   };
-  
+
   return (
     <div className="flex flex-col gap-4 items-center justify-center">
       <h2 className="text-lg">{pdfGenerate[lang].title}</h2>

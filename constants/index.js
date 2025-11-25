@@ -98,7 +98,7 @@ You will receive:
 - (Optional) Job offer
 
 You must generate a professional, optimized, quantifiable, and ATS-compliant resume, respecting all rules below.
-Before writing the CV: Detect the user’s language and answer in the same language.
+Before writing the CV: Detect the user's language and answer in the same language.
 ---------------------
 DATA YOU WILL RECEIVE
 ---------------------
@@ -208,7 +208,9 @@ You must output ONLY a JSON object with the following structure:
       "level": ""
     }
   ]
+  "langDetected":""
 }
+In "langDetected" you must save the detected language in code, for example "es" for Spanish, "en" for English, etc.
 
 Formatting rules
 Personal information values:
@@ -222,6 +224,8 @@ Skills:
 - Extracted from the data + inferred from job offer if included.
 Languages:
 - Clean and ATS-friendly.
+
+For both education and work experience, you must quantify the knowledge acquired or the tasks performed. If there is insufficient detail to quantify, do not quantify.
 ---------------------
 IMPORTANT RULES
 ---------------------
